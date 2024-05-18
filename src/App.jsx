@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SearchForm from './components/SearchForm'
 import Map from './components/Map'
-import './app.css'
+import './App.css'
 
 export default function App() {
   const [ place, setPlace ] = useState(null)
