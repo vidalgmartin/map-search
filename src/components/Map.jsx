@@ -14,17 +14,15 @@ export default function Map({ place }) {
     }, [place])
 
     return (
-        <div className="map-container">
-            <MapContainer
-                ref={mapRef}
-                center={[33.7, -84.4]}
-                zoom={10}
-                scrollWheelZoom
-                className="map"
-            >
-                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                {place && <Marker position={[place.latitude, place.longitude]}></Marker>}
-            </MapContainer>
-        </div>
+        <MapContainer
+            ref={mapRef}
+            center={[33.7, -84.4]}
+            zoom={10}
+            scrollWheelZoom
+            className="map"
+        >
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+            {place && <Marker position={[place.latitude, place.longitude]}></Marker>}
+        </MapContainer>
     )
 }

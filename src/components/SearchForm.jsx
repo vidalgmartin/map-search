@@ -26,17 +26,18 @@ export default function SearchForm({ searchFunction }) {
 
     return (
         <div className="search-form-container">
-            <form onSubmit={handleSubmit}>
-                <label>Search</label>
+            <form className="search-form" onSubmit={handleSubmit}>
                 <input 
+                    placeholder="Search for a location..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </form>
+
             {location && location.map((place, index) => (
-                <div key={index}>
+                <div className="location" key={index}>
                     <p >{place.name}</p>
-                    <button onClick={() => searchFunction(place)}>find</button>
+                    <button onClick={() => searchFunction(place)}>Search</button>
                 </div>
             ))}
         </div>
